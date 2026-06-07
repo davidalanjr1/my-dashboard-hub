@@ -98,12 +98,12 @@ export default function App() {
               <div style={{ width: 36, height: 36, borderRadius: "50%", background: "linear-gradient(135deg, #e879f9, #6366f1)", display: "flex", alignItems: "center", justifyContent: "center", color: "white", fontWeight: "bold" }}>D</div>
               <div>
                 <div style={{ fontSize: 20, fontWeight: "bold", color: "#f1f5f9" }}>David's Business Hub</div>
-                <div style={{ fontSize: 11, color: "#64748b", ...s.mono, letterSpacing: "0.08em" }}>PHOTOGRAPHY Â· SOCIAL MEDIA Â· GROWTH</div>
+                <div style={{ fontSize: 11, color: "#64748b", ...s.mono, letterSpacing: "0.08em" }}>PHOTOGRAPHY · SOCIAL MEDIA · GROWTH</div>
               </div>
             </div>
             <div style={{ ...s.mono, fontSize: 10, color: justSaved ? "#10b981" : "#334155", display: "flex", alignItems: "center", gap: 4 }}>
               <span style={{ width: 6, height: 6, borderRadius: "50%", background: justSaved ? "#10b981" : "#334155", display: "inline-block" }} />
-              {justSaved ? "SAVED âœ“" : "AUTO-SAVE ON"}
+              {justSaved ? "SAVED ✓" : "AUTO-SAVE ON"}
             </div>
           </div>
           <div style={{ display: "flex", gap: 2, marginTop: 16, overflowX: "auto" }}>
@@ -118,14 +118,14 @@ export default function App() {
 
         {section === "Dashboard" && (
           <div>
-            <h2 style={{ fontSize: 22, color: "#f1f5f9", margin: "0 0 4px" }}>Welcome back, David ðŸ‘‹</h2>
+            <h2 style={{ fontSize: 22, color: "#f1f5f9", margin: "0 0 4px" }}>Welcome back, David 👋</h2>
             <p style={{ color: "#64748b", margin: "0 0 24px", fontSize: 14 }}>Your data saves to this browser automatically.</p>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 12, marginBottom: 24 }}>
               {[
-                { label: "Active Projects", value: activeProjects, color: "#22d3ee", icon: "ðŸ“" },
-                { label: "Goals Completed", value: `${doneGoals}/${data.goals.length}`, color: "#10b981", icon: "ðŸŽ¯" },
-                { label: "High Priority Ideas", value: highPriorityIdeas, color: "#e879f9", icon: "ðŸ’¡" },
-                { label: "Prompt Templates", value: data.prompts.length, color: "#f59e0b", icon: "ðŸ¤–" },
+                { label: "Active Projects", value: activeProjects, color: "#22d3ee", icon: "📁" },
+                { label: "Goals Completed", value: `${doneGoals}/${data.goals.length}`, color: "#10b981", icon: "🎯" },
+                { label: "High Priority Ideas", value: highPriorityIdeas, color: "#e879f9", icon: "💡" },
+                { label: "Prompt Templates", value: data.prompts.length, color: "#f59e0b", icon: "🤖" },
               ].map(stat => (
                 <div key={stat.label} style={{ ...s.card, border: `1px solid ${stat.color}22` }}>
                   <div style={{ fontSize: 24, marginBottom: 4 }}>{stat.icon}</div>
@@ -135,23 +135,23 @@ export default function App() {
               ))}
             </div>
             <div style={{ ...s.card, background: "linear-gradient(135deg, #1a0a2e, #0a1628)", border: "1px solid #e879f933", marginBottom: 20 }}>
-              <h3 style={{ color: "#e879f9", margin: "0 0 12px", fontSize: 15, ...s.mono }}>ðŸ¤– HOW TO USE CLAUDE FOR YOUR BUSINESS</h3>
+              <h3 style={{ color: "#e879f9", margin: "0 0 12px", fontSize: 15, ...s.mono }}>🤖 HOW TO USE CLAUDE FOR YOUR BUSINESS</h3>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 12 }}>
                 {[
-                  { role: "ðŸ“¸ Photography", tips: ["Write client emails & contracts", "Create pricing packages", "Plan portfolio content", "Write website copy"] },
-                  { role: "ðŸ“± Social Media", tips: ["Plan weekly content calendars", "Write captions in bulk", "Brainstorm reel ideas", "Analyze what's working"] },
-                  { role: "ðŸŒ Website", tips: ["Write all page copy", "SEO meta descriptions", "Service descriptions", "FAQ sections"] },
-                  { role: "ðŸ“ˆ Growth", tips: ["Identify next revenue moves", "Plan rates & packages", "Research competitors", "Build referral systems"] },
+                  { role: "📸 Photography", tips: ["Write client emails & contracts", "Create pricing packages", "Plan portfolio content", "Write website copy"] },
+                  { role: "📱 Social Media", tips: ["Plan weekly content calendars", "Write captions in bulk", "Brainstorm reel ideas", "Analyze what's working"] },
+                  { role: "🌐 Website", tips: ["Write all page copy", "SEO meta descriptions", "Service descriptions", "FAQ sections"] },
+                  { role: "📈 Growth", tips: ["Identify next revenue moves", "Plan rates & packages", "Research competitors", "Build referral systems"] },
                 ].map(r => (
                   <div key={r.role} style={{ background: "#ffffff08", borderRadius: 8, padding: 12 }}>
                     <div style={{ fontWeight: "bold", color: "#f1f5f9", marginBottom: 8, fontSize: 13 }}>{r.role}</div>
-                    {r.tips.map(t => <div key={t} style={{ fontSize: 12, color: "#94a3b8", padding: "2px 0", display: "flex", gap: 6 }}><span style={{ color: "#e879f9" }}>â†’</span>{t}</div>)}
+                    {r.tips.map(t => <div key={t} style={{ fontSize: 12, color: "#94a3b8", padding: "2px 0", display: "flex", gap: 6 }}><span style={{ color: "#e879f9" }}>→</span>{t}</div>)}
                   </div>
                 ))}
               </div>
             </div>
             <div style={s.card}>
-              <h3 style={{ color: "#f1f5f9", margin: "0 0 12px", fontSize: 14, ...s.mono }}>â° UPCOMING DEADLINES</h3>
+              <h3 style={{ color: "#f1f5f9", margin: "0 0 12px", fontSize: 14, ...s.mono }}>⏰ UPCOMING DEADLINES</h3>
               {data.projects.filter(p => p.status !== "Completed").sort((a, b) => new Date(a.deadline) - new Date(b.deadline)).map(p => (
                 <div key={p.id} style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 0", borderBottom: "1px solid #1e293b" }}>
                   <span style={s.tag(TYPE_COLORS[p.type] || "#6366f1")}>{p.type}</span>
@@ -187,7 +187,7 @@ export default function App() {
                     {["In Progress", "Active", "Booked", "Completed"].map(st => (
                       <button key={st} onClick={() => updateData({ ...data, projects: data.projects.map(pr => pr.id === p.id ? { ...pr, status: st } : pr) })} style={{ fontSize: 10, padding: "3px 8px", borderRadius: 6, background: p.status === st ? `${STATUS_COLORS[st]}33` : "transparent", color: p.status === st ? STATUS_COLORS[st] : "#475569", border: `1px solid ${p.status === st ? STATUS_COLORS[st] : "#1e293b"}`, cursor: "pointer" }}>{st}</button>
                     ))}
-                    <button onClick={() => updateData({ ...data, projects: data.projects.filter(pr => pr.id !== p.id) })} style={{ fontSize: 10, padding: "3px 8px", borderRadius: 6, background: "transparent", color: "#475569", border: "1px solid #1e293b", cursor: "pointer", marginLeft: "auto" }}>âœ• Delete</button>
+                    <button onClick={() => updateData({ ...data, projects: data.projects.filter(pr => pr.id !== p.id) })} style={{ fontSize: 10, padding: "3px 8px", borderRadius: 6, background: "transparent", color: "#475569", border: "1px solid #1e293b", cursor: "pointer", marginLeft: "auto" }}>✕ Delete</button>
                   </div>
                 </div>
               ))}
@@ -211,7 +211,7 @@ export default function App() {
                 <div key={inc.id} style={{ ...s.card, borderLeft: `3px solid ${TYPE_COLORS[inc.type] || "#6366f1"}`, display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
                   <div style={{ flex: 1 }}>
                     <div style={{ fontWeight: "bold", color: "#f1f5f9", fontSize: 14 }}>{inc.source}</div>
-                    <div style={{ fontSize: 11, color: "#64748b" }}>{inc.frequency} Â· {inc.notes}</div>
+                    <div style={{ fontSize: 11, color: "#64748b" }}>{inc.frequency} · {inc.notes}</div>
                   </div>
                   <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
                     <span style={{ color: "#64748b" }}>$</span>
@@ -219,7 +219,7 @@ export default function App() {
                       style={{ background: "#1e293b", border: "1px solid #334155", color: "#f1f5f9", borderRadius: 6, padding: "6px 10px", width: 100, fontSize: 16, fontWeight: "bold" }} />
                   </div>
                   <span style={s.tag(TYPE_COLORS[inc.type] || "#6366f1")}>{inc.type}</span>
-                  <button onClick={() => updateData({ ...data, income: data.income.filter(i => i.id !== inc.id) })} style={{ fontSize: 10, padding: "3px 8px", borderRadius: 6, background: "transparent", color: "#475569", border: "1px solid #1e293b", cursor: "pointer" }}>âœ•</button>
+                  <button onClick={() => updateData({ ...data, income: data.income.filter(i => i.id !== inc.id) })} style={{ fontSize: 10, padding: "3px 8px", borderRadius: 6, background: "transparent", color: "#475569", border: "1px solid #1e293b", cursor: "pointer" }}>✕</button>
                 </div>
               ))}
             </div>
@@ -247,7 +247,7 @@ export default function App() {
                     {["Low", "Medium", "High"].map(p => (
                       <button key={p} onClick={() => updateData({ ...data, ideas: data.ideas.map(i => i.id === idea.id ? { ...i, priority: p } : i) })} style={{ fontSize: 10, padding: "3px 8px", borderRadius: 6, background: idea.priority === p ? "#f59e0b22" : "transparent", color: idea.priority === p ? "#f59e0b" : "#475569", border: `1px solid ${idea.priority === p ? "#f59e0b" : "#1e293b"}`, cursor: "pointer" }}>{p}</button>
                     ))}
-                    <button onClick={() => updateData({ ...data, ideas: data.ideas.filter(i => i.id !== idea.id) })} style={{ fontSize: 10, padding: "3px 8px", borderRadius: 6, background: "transparent", color: "#475569", border: "1px solid #1e293b", cursor: "pointer", marginLeft: "auto" }}>âœ• Delete</button>
+                    <button onClick={() => updateData({ ...data, ideas: data.ideas.filter(i => i.id !== idea.id) })} style={{ fontSize: 10, padding: "3px 8px", borderRadius: 6, background: "transparent", color: "#475569", border: "1px solid #1e293b", cursor: "pointer", marginLeft: "auto" }}>✕ Delete</button>
                   </div>
                 </div>
               ))}
@@ -274,13 +274,13 @@ export default function App() {
               {data.goals.map(goal => (
                 <div key={goal.id} onClick={() => toggleGoal(goal.id)} style={{ ...s.card, background: goal.done ? "#0a1a12" : "#111827", border: `1px solid ${goal.done ? "#10b98133" : "#1e293b"}`, display: "flex", alignItems: "center", gap: 12, cursor: "pointer" }}>
                   <div style={{ width: 22, height: 22, borderRadius: "50%", border: `2px solid ${goal.done ? "#10b981" : "#334155"}`, background: goal.done ? "#10b981" : "transparent", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    {goal.done && <span style={{ color: "white", fontSize: 12 }}>âœ“</span>}
+                    {goal.done && <span style={{ color: "white", fontSize: 12 }}>✓</span>}
                   </div>
                   <div style={{ flex: 1 }}>
                     <div style={{ fontSize: 14, color: goal.done ? "#64748b" : "#f1f5f9", textDecoration: goal.done ? "line-through" : "none" }}>{goal.goal}</div>
-                    <div style={{ fontSize: 11, color: "#475569", marginTop: 2 }}>{goal.category} Â· Due {goal.deadline}</div>
+                    <div style={{ fontSize: 11, color: "#475569", marginTop: 2 }}>{goal.category} · Due {goal.deadline}</div>
                   </div>
-                  <button onClick={e => { e.stopPropagation(); updateData({ ...data, goals: data.goals.filter(g => g.id !== goal.id) }); }} style={{ fontSize: 10, padding: "3px 8px", borderRadius: 6, background: "transparent", color: "#475569", border: "1px solid #1e293b", cursor: "pointer" }}>âœ•</button>
+                  <button onClick={e => { e.stopPropagation(); updateData({ ...data, goals: data.goals.filter(g => g.id !== goal.id) }); }} style={{ fontSize: 10, padding: "3px 8px", borderRadius: 6, background: "transparent", color: "#475569", border: "1px solid #1e293b", cursor: "pointer" }}>✕</button>
                 </div>
               ))}
             </div>
@@ -298,17 +298,23 @@ export default function App() {
                 <div key={p.id} style={s.card}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
                     <div style={{ fontWeight: "bold", color: "#f1f5f9", fontSize: 14 }}>{p.title}</div>
-                    <button onClick={() => copyPrompt(p.prompt, p.id)} style={{ background: copied === p.id ? "#10b98122" : "#6366f122", color: copied === p.id ? "#10b981" : "#818cf8", border: `1px solid ${copied === p.id ? "#10b981" : "#6366f1"}`, borderRadius: 6, padding: "4px 12px", fontSize: 11, cursor: "pointer" }}>{copied === p.id ? "âœ“ Copied!" : "Copy"}</button>
+                    <button onClick={() => copyPrompt(p.prompt, p.id)} style={{ background: copied === p.id ? "#10b98122" : "#6366f122", color: copied === p.id ? "#10b981" : "#818cf8", border: `1px solid ${copied === p.id ? "#10b981" : "#6366f1"}`, borderRadius: 6, padding: "4px 12px", fontSize: 11, cursor: "pointer" }}>{copied === p.id ? "✓ Copied!" : "Copy"}</button>
                   </div>
                   <div style={{ fontSize: 12, color: "#94a3b8", background: "#ffffff06", borderRadius: 6, padding: 10, lineHeight: 1.6, ...s.mono }}>{p.prompt}</div>
                 </div>
               ))}
             </div>
             <div style={{ ...s.card, background: "linear-gradient(135deg, #1a0a2e, #0a1628)", border: "1px solid #6366f133", marginTop: 20 }}>
-              <h3 style={{ color: "#818cf8", fontSize: 13, margin: "0 0 10px", ...s.mono }}>ðŸ’¡ TIPS FOR BETTER RESULTS FROM CLAUDE</h3>
-              {["Be specific â€” include your goal, audience, or deadline", "Share context â€” mention family of 7, multiple income streams", "Ask for options â€” 'give me 3 versions' works great", "Iterate â€” paste output back and say 'make it shorter/warmer'", "Use it daily â€” treat Claude like your free business assistant"].map(tip => (
+              <h3 style={{ color: "#818cf8", fontSize: 13, margin: "0 0 10px", ...s.mono }}>💡 TIPS FOR BETTER RESULTS FROM CLAUDE</h3>
+              {[
+                "Be specific — include your goal, audience, or deadline",
+                "Share context — mention family of 7, multiple income streams",
+                "Ask for options — 'give me 3 versions' works great",
+                "Iterate — paste output back and say 'make it shorter/warmer'",
+                "Use it daily — treat Claude like your free business assistant",
+              ].map(tip => (
                 <div key={tip} style={{ display: "flex", gap: 8, fontSize: 12, color: "#94a3b8", marginBottom: 4 }}>
-                  <span style={{ color: "#6366f1" }}>â†’</span>{tip}
+                  <span style={{ color: "#6366f1" }}>→</span>{tip}
                 </div>
               ))}
             </div>
